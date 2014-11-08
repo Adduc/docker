@@ -1,0 +1,31 @@
+##
+# Database Server
+##
+database:
+  image: "128io/database"
+  ports:
+   - "3306:3306"
+  volumes:
+   - "~/128io-data/data/database:/var/lib/mysql"
+
+##
+# Proxy Server
+##
+proxy:
+  image: "128io/proxy"
+  ports:
+   - "80:80"
+  volumes:
+   - "~/128io-data/logs/proxy:/var/log/nginx"
+
+##
+# PhpMyAdmin
+##
+pma:
+  image: "128io/php56"
+  ports:
+   - "8000:80"
+  volumes:
+   - "~/128io-data/logs/pma/nginx:/var/log/nginx"
+   - "~/128io-data/logs/pma/php:/var/log/php"
+   - "~/Downloads/Repositories/phpmyadmin:/site"

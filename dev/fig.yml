@@ -1,0 +1,16 @@
+proxy:
+  image: "128io/dev-proxy"
+  ports:
+   - "8001:80"
+  volumes:
+   - "~/128io-data/logs/dev-proxy:/var/log/nginx"
+
+domainTracker:
+  image: "128io/php56"
+  ports:
+   - "8002:80"
+  volumes:
+   - "~/128io-data/logs/domain-tracker/nginx:/var/log/nginx"
+   - "~/128io-data/logs/domain-tracker/php:/var/log/php"
+   - "~/128io-data/apps/domain-tracker/public:/site"
+         
