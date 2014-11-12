@@ -6,11 +6,20 @@ proxy:
    - "~/128io-data/logs/dev-proxy:/var/log/nginx"
 
 domainTracker:
-  image: "128io/php56"
+  image: "128io/dev-php56"
   ports:
    - "8002:80"
   volumes:
    - "~/128io-data/logs/domain-tracker/nginx:/var/log/nginx"
    - "~/128io-data/logs/domain-tracker/php:/var/log/php"
-   - "~/128io-data/apps/domain-tracker/public:/site"
+   - "~/128io-data/apps/domain-tracker:/site"
+         
+test:
+  image: "128io/dev-php56"
+  ports:
+   - "8003:80"
+  volumes:
+   - "~/128io-data/logs/test/nginx:/var/log/nginx"
+   - "~/128io-data/logs/test/php:/var/log/php"
+   - "~/128io-data/apps/test:/site"
          

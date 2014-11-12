@@ -2,7 +2,8 @@ FROM 128io/base
 
 RUN apt-get install -y mysql-client nginx
 
-RUN apt-get install -y php5-cli php5-mysqlnd php5-mcrypt php5-intl php5-fpm
+RUN apt-get install -y php5-cli php5-mysqlnd php5-mcrypt php5-intl php5-fpm \
+    php5-sqlite
 
 RUN rm -r /etc/nginx/sites-enabled/*
 

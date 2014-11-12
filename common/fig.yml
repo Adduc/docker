@@ -17,15 +17,3 @@ proxy:
    - "80:80"
   volumes:
    - "~/128io-data/logs/proxy:/var/log/nginx"
-
-##
-# PhpMyAdmin
-##
-pma:
-  image: "128io/php56"
-  ports:
-   - "8000:80"
-  volumes:
-   - "~/128io-data/logs/pma/nginx:/var/log/nginx"
-   - "~/128io-data/logs/pma/php:/var/log/php"
-   - "~/Downloads/Repositories/phpmyadmin:/site"

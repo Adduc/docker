@@ -6,23 +6,18 @@
 ##
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
-PROJECT="128io-dev"
+PROJECT="128io-pma"
 
 if [ "$1" == "build" ]; then
 
-  ../common/cmd.sh $1
-
-  docker build -t "128io/dev-proxy" proxy
-  docker build -t "128io/dev-php56" php56
+  docker build -t "128io/pma-php56" php56
 
 elif [ "$1" == "up" ]; then
-
-  ../common/cmd.sh $1
 
   if [ -z "$(${BASH_SOURCE[0]} ps | grep Up)" ]; then
     fig -p "$PROJECT" "$@" -d
   else
-    echo "Dev containers are already up..."
+    echo "PMA container is already up..."
   fi
 
 else
