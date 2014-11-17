@@ -23,3 +23,12 @@ rssRedelivered:
    - "~/128io-data/logs/rss-redelivered/php:/var/log/php"
    - "~/128io-data/apps/rss-redelivered:/site"
          
+wordpress:
+  image: "128io/dev-php56"
+  ports:
+   - "8004:80"
+  volumes:
+   - "~/128io-data/logs/wordpress/nginx:/var/log/nginx"
+   - "~/128io-data/logs/wordpress/php:/var/log/php"
+   - "~/128io-data/apps/wordpress:/site"
+         
