@@ -3,7 +3,7 @@ FROM 128io/base
 RUN apt-get install -y mysql-client nginx
 
 RUN apt-get install -y php5-cli php5-mysqlnd php5-mcrypt php5-intl php5-fpm \
-    php5-sqlite
+    php5-sqlite php5-apcu
 
 RUN rm -r /etc/nginx/sites-enabled/*
 
